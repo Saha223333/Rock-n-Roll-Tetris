@@ -15,7 +15,6 @@ var cols = canvasWidthInput.valueAsNumber;
 var blockSize = blockSizeInput.valueAsNumber;
 
 var speedMultiplier = 10;//lesser - faster
-// var level = 1;
 var intervalTime = 0;
 
 var startX = 3 * blockSize;
@@ -173,7 +172,6 @@ function moveShape(backgroundColor, direction)
 {
     if (isPause) return;//forbid any moving
 
-    //if (direction == " ") { alert("123"); }//" " means space between symbols literally!
     if (this.currentShape.move(ctx, backgroundColor, direction, true) == true)
     {
         this.createShape();
