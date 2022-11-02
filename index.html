@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="google" content="notranslate">
+
+        <title>Rock'n'Roll Tetris</title>
+        <link rel="icon" type="image/png" href="favicon.png" />
+
+        <style>         
+        .canv
+        {
+            border: 3px solid #000303;
+            background-color: #7fffd4; 
+        }
+
+        .canvDiv
+        {
+            border: 2px dashed #000000;
+            background-color: #faebd7;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .brightBigLabel 
+        {
+            width: 600px;
+            margin: 0 auto;
+            font-family: "Helvetica Neue", "Arial", sans-serif;
+            font-style: bold;
+            font-weight: 100;
+            font-variant-ligatures: normal;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            color:#ff0000;
+        }
+
+        .songLabel 
+        {
+            width: 600px;
+            margin: 0 auto;
+            font-family: "Helvetica Neue", "Arial", sans-serif;
+            font-style: bold;
+            font-weight: 100;
+            font-variant-ligatures: normal;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            color:#a200ff;
+        }
+        </style>
+
+        <script type="text/javascript" src="block.js" id="blockClass"></script> <!-- hereby lies blocks classes-->
+        <script type="text/javascript" src="main.js" id="mainScript" defer></script><!-- defer to wait until DOM is loaded-->
+        <script type="text/javascript" src="prepare.js" id="prepScript" defer></script>
+        <script type="text/javascript" src="shape.js" id="shapeClass" defer></script>
+        <script type="text/javascript" src="shapeRod.js" id="shapeRodClass" defer></script>
+        <script type="text/javascript" src="shapeBox.js" id="shapeBoxClass" defer></script>
+        <script type="text/javascript" src="shapeSup.js" id="shapeSupClass" defer></script>
+        <script type="text/javascript" src="shapeSupMir.js" id="shapeSupMirClass" defer></script>
+        <script type="text/javascript" src="shapeRussianG.js" id="shapeRussianGClass" defer></script>
+        <script type="text/javascript" src="shapeMirL.js" id="shapeMirLClass" defer></script>
+        <script type="text/javascript" src="shapeTeaUp.js" id="shapeTeaUpClass" defer></script>
+        <script type="text/javascript" src="shapeTeaDown.js" id="shapeTeaDownClass" defer></script>
+        <script type="text/javascript" src="shapeRussianMirG.js" id="shapeRussianMirGClass" defer></script>
+        <script type="text/javascript" src="shapeL.js" id="shapeLClass" defer></script>
+
+    </head>
+
+    <body onload="loadBody('#7fffd4')">    
+        <div id="canvasDiv" class="canvDiv" align="center"> 
+            <table>
+                <tr>
+                    <td align="center">
+                        <label id="title" class="brightBigLabel" >Rock'n'Roll Tetris</label>              
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center">
+                        <label id="songLabel" class="songLabel"></label>                   
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center">                 
+                        <canvas class="canv" width="320" height="600" id="canvas">
+                        </canvas>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center">
+                        <button id="startButton" align="center" onclick="startGame('#7fffd4')">Начать</button>
+                        <button id="pauseButton" align="center" onclick="pauseGame()">Пауза</button>
+                        <button id="playMusicButton" align="center" onclick="playMusic()">Музыка ВКЛ</button>
+                        <button id="pauseMusicButton" align="center" onclick="pauseMusic()">Музыка ВЫКЛ</button>
+                        <button id="initMusicButton" align="center" onclick="initMusic()">След. музыка</button>
+                        <input id="canvasWidthInput" align="center" type="number" style="width: 3em" min="8" max="20" value="10"></input>
+                        <input id="canvasHeightInput" align="center" type="number" style="width: 3em" min="15" max="25" value="20"></input>
+                        <input id="blockSizeInput" align="center" type="number" style="width: 3em" min="20" max="40" value="30" step="10"></input>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">
+                        <label id="scoresLabel" class="brightBigLabel">0</label>             
+                        <label id="levelLabel" class="brightBigLabel">0</label>
+                    </td>                 
+                </tr>
+
+            </table>
+        </div>
+    </body>
+</html>
